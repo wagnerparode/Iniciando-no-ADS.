@@ -1,11 +1,11 @@
-#Análise e desenvolvimento de sistemas
+# Análise e desenvolvimento de sistemas
 
 
-##Lógica de programação
+## Lógica de programação
 
 é a habilidade de organizar pensamentos de forma estruturada para que um computador consiga resolver um problema. Computadores precisam de instruções exatas, passo a passo, chamadas de algoritmos.
 
-##Os pilares fundamentais
+## Os pilares fundamentais
 
 Para começar a praticar, você precisa entender quatro conceitos básicos:
  
