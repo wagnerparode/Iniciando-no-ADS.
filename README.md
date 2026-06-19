@@ -338,3 +338,31 @@ while continuar == True:
         print('opção inválida!')
         print()
 ```
+
+
+## 🚀 Avançando na Lógica: Passando Informação para a Função
+
+No mercado real, as funções não servem apenas para mostrar textos fixos. Elas recebem dados, realizam cálculos e devolvem respostas.
+
+Imagine o sistema de uma loja: a função precisa receber o preço do produto e o cupom de desconto para calcular o valor final. Essas informações que enviamos para dentro da função são chamadas de **Parâmetros** (ou Argumentos).
+
+---
+
+### 💻 Prática em Python
+
+```python
+# 1. Ensinamos a função a calcular o desconto.
+# Ela espera receber o “valor” e o “cupom” dentro dos parênteses.
+def calcular_preço_final(valor, cupom):
+    desconto = valor * (cupom / 100)
+    preço_final = valor - desconto
+    print("O valor final com desconto é: R\$", preço_final)
+
+
+# 2. O programa principal começa aqui, colado na esquerda:
+print("--- SISTEMA DE CAIXA ---")
+
+# Chamamos a função passando valores direto para ela:
+calcular_preço_final(100.00, 10)  # Produto de R\$100 com 10% de desconto
+calcular_preço_final(250.00, 20)  # Produto de R\$250 com 20% de desconto
+```
