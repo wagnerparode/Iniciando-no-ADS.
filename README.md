@@ -1,4 +1,19 @@
-# Análise e desenvolvimento de sistemas
+# Meu Caderno de Estudos de Programação 🚀
+
+Bem-vindo(a) ao meu repositório de aprendizado! Este espaço funciona como o meu caderno digital oficial, onde registro meus primeiros passos no mundo do desenvolvimento de software e na faculdade de ADS.
+
+Aqui guardo minhas anotações teóricas sobre lógica de programação, conceitos importantes do mercado e os códigos práticos que desenvolvo e testo usando o **Pydroid 3** direto pelo meu celular.
+
+## 🛠️ Tecnologias e Ferramentas em Estudo
+* **Lógica de Programação** (Variáveis, Estruturas Condicionais e Loops)
+* **Python** (Interação com o usuário, Contadores e Listas/Arrays)
+* **Pydroid 3** (Ambiente de desenvolvimento mobile)
+* **Git & GitHub** (Versionamento e documentação de projetos)
+
+---
+
+## 📖 Sumário dos Conteúdos Cadastrados
+Abaixo você encontra as lições e códigos organizados por evolução:
 
 
 ## Lógica de programação
