@@ -147,3 +147,88 @@ while usuario_logado == False and tentativas < 3:
 if usuario_logado == False:
     print("Conta bloqueada por excesso de tentativas!")
 ```
+
+
+O CÓDIGO COMPLETO DA CALCULADORA
+
+```python
+# Criamos uma variável para controlar quando a calculadora deve fechar
+continuar = True
+
+while continuar == True:
+    print("--- MENU DA CALCULADORA ---")
+    print("1 - Somar")
+    print("2 - Subtrair")
+    print("3 - Sair")
+    print()
+
+    opcao = input("Escolha uma opcao (1, 2 ou 3): ")
+    print()
+
+    # Se o usuário quiser sair, mudamos a variável para False e o loop quebra
+    if opcao == "3":
+        print("Calculadora encerrada. Até logo!")
+        continuar = False
+        
+    # Se o usuário escolher uma opção válida de conta (1 ou 2)
+    elif opcao == "1" or opcao == "2":
+        num1 = float(input("Digite o primeiro número: "))
+        num2 = float(input("Digite o segundo número: "))
+        print()
+
+        if opcao == "1":
+            resultado = num1 + num2
+            print("O resultado da soma é:", resultado)
+        else:
+            resultado = num1 - num2
+            print("O resultado da subtração é:", resultado)
+            print()  # Pula linha para organizar
+
+    # Se digitar qualquer outra coisa inválida 
+    else:
+        print("Opção inválida! Tente novamente.")
+        print()
+```
+
+---
+
+TRÊS NOVAS REGRAS DE LÓGICA PARA OBSERVAR:
+
+O elif: Significa “Senão Se”. Ele serve para criar uma terceira ou quarta opção no sistema entre o if e o else.
+
+O operador or (“ou”): Significa que o programa vai pedir os números se você escolher a opção 1 “ou” opção 2.
+
+Conversão com float(): Repare que envolvemos o input() dentro do float(). Isso garante que o celular trate o que você digitou como número matemático, aceitando até números com ponto (ex: 10.5).
+
+---
+
+O projeto da calculadora serve para treinar a Arquitetura de Fluxo de Dados que move os grandes sistemas de mercado (como Uber, e-commerces e bancos).
+
+INTERAÇÃO E CONVERSÃO DE TEXTO PARA NÚMERO 
+
+O que foi feito: usamos float(input()) para capturar os dados do teclado.
+
+Utilidade real: o comando input() sempre recebe tudo como se fosse texto (letras). Se o usuário digitar 20 e 30, o computador entende como duas palavras. O comando float() limpa o dado e o transforma em número matemático.
+
+No mercado: é o que o sistema da Uber faz ao pegar a distância em um texto digitada no mapa e transformá-la em um número real para calcular o preço da sua corrida.
+
+---
+
+A LÓGICA DOS MENUS DE ESCOLHA
+
+O que foi feito: Criamos opções numéricas (1 - Somar, 2 - Subtrair, 3 - Sair).
+
+Utilidade Real: O uso do if, elif e else direciona o processador do celular para executar apenas o bloco de código que o usuário solicitou, ignorando o resto.
+
+No mercado: É a estrutura de qualquer menu de atendimento automático (como o suporte de grandes empresas no WhatsApp) ou as categorias de filtros dentro do Mercado Livre.
+
+---
+
+PERSISTÊNCIA DE TELA (MANTER O APP ABERTO)
+
+O que foi feito: Controlamos o ciclo com a variável continuar = True.
+
+Utilidade real: Sistemas de console fecham imediatamente após exibir um resultado. O while amarra o programa em um ciclo eterno para que o usuário faça quantas contas quiser. O app só fecha de forma controlada quando o usuário escolhe a opção “Sair”.
+
+No mercado: É o motor de qualquer app de celular. Quando você clica em “Sair da Conta” (Logout) na Netflix, o sistema roda um comando idêntico mudando o seu status para False, encerrando a sua sessão com segurança.
+
