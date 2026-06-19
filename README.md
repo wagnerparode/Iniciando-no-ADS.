@@ -74,7 +74,7 @@ else:
 ### O que significa o `==`?
 Na programação, um `=` sozinho serve para **guardar** algo na gaveta. Dois `==` servem para **comparar** se duas coisas são exatamente iguais.
 
-# PARTE 3: DEIXANDO O SISTEMA INTERATIVO (INPUT)
+## PARTE 3: DEIXANDO O SISTEMA INTERATIVO (INPUT)
 
 No código anterior, as variáveis já estavam fixas com os valores "ads123". Mas, em um sistema real, o usuário digita a senha pelo teclado na hora.
 
@@ -96,7 +96,7 @@ else:
 
 ---
 
-# PARTE 4: O QUE É UM LAÇO DE REPETIÇÃO?
+## PARTE 4: O QUE É UM LAÇO DE REPETIÇÃO?
 
 Imagine que, no sistema de login que criamos, o usuário erre a senha. Do jeito que o código está hoje, o programa simplesmente fecha. Para tentar de novo, o usuário teria que abrir o aplicativo do zero. Não é assim que os sistemas reais funcionam.
 
@@ -133,7 +133,7 @@ else:
 
 ---
 
-# PARTE 5: CRIANDO UM LIMITE DE 3 TENTATIVAS (CONTADORES)
+## PARTE 5: CRIANDO UM LIMITE DE 3 TENTATIVAS (CONTADORES)
 
 Para colocarmos o limite de 3 tentativas, precisamos apresentar um novo conceito à lógica: os Contadores. Um contador é apenas uma variável que começa em 0 e, a cada vez que o usuário erra a senha, nós somamos 1 nela. Quando esse número chegar a 3, o sistema bloqueia e encerra o programa.
 
