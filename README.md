@@ -233,83 +233,93 @@ Utilidade real: Sistemas de console fecham imediatamente após exibir um resulta
 No mercado: É o motor de qualquer app de celular. Quando você clica em “Sair da Conta” (Logout) na Netflix, o sistema roda um comando idêntico mudando o seu status para False, encerrando a sua sessão com segurança.
 
 
-Listas (Array)
-  Até agora, cada variável criada era como uma gaveta pequena que só guardava uma informação por vez.
-  Uma Lista (que na faculdade chamamos teoricamente de Array ou Vetor) é como um armário organizador cheio de gavetas numeradas. Ela.permite guardar dezenas, centenas ou milhares de dados dentro de uma única variável. 
+LISTAS (ARRAY)
 
-      Como funciona no Python (A Regra do Zero)
-  No Python, criamos uma lista usando colchetes [ ].
-  O computador organiza os itens dando uma “posição” (índice) para cada um, começando sempre pelo número zero (0).
-*imagine uma lista de compras:
+Até agora, cada variável criada era como uma gaveta pequena que só guardava uma informação por vez.
+Uma Lista (que na faculdade chamamos teoricamente de Array ou Vetor) é como um armário organizador cheio de gavetas numeradas. Ela permite guardar dezenas, centenas ou milhares de dados dentro de uma única variável. 
 
-#posição:     0                       1                   2
-Produtos = [“Notebook” , “Celular” , “Teclado”]
+COMO FUNCIONA NO PYTHON (A REGRA DO ZERO)
 
+No Python, criamos uma lista usando colchetes [ ].
+O computador organiza os itens dando uma “posição” (índice) para cada um, começando sempre pelo número zero (0).
 
+Imagine uma lista de compras:
 
-Código para aplicar no app
+```python
+# posição:       0             1             2
+produtos = ["Notebook", "Celular", "Teclado"]
+```
 
-#Criando a lista com 3 itens
-Carrinho = [“Mouse”, “Teclado” , “Monitor”]
+CÓDIGO PARA APLICAR NO APP
 
-#Exibindo a lista inteira na tela
-print(“Meu carrinho de compras completo:”)
+```python
+# Criando a lista com 3 itens
+carrinho = ["Mouse", "Teclado", "Monitor"]
+
+# Exibindo a lista inteira na tela
+print("Meu carrinho de compras completo:")
 print(carrinho)
-print() #Truque pula linha
+print() # Truque pula linha
 
-#Buscando apenas UM item específico pela posição dele (índice)
-print(“O primeiro item da lista é: “ , carrinho [0])
-print(“O segundo item da lista é: “ , carrinho [1])
+# Buscando apenas UM item específico pela posição dele (índice)
+print("O primeiro item da lista é: ", carrinho[0])
+print("O segundo item da lista é: ", carrinho[1])
+```
 
+---
 
-      Próximo passo adicionar itens na Lista (append)
-  Em um sistema real (como o carrinho da Amazon), o usuário clica em um botão e novos produtos entram na lista dinamicamente. No Python, fazemos isso usando o comando .append() (que significa “ acrescentar “ ou “anexar”).
+PRÓXIMO PASSO: ADICIONAR ITENS NA LISTA (APPEND)
+
+Em um sistema real (como o carrinho da Amazon), o usuário clica em um botão e novos produtos entram na lista dinamicamente. No Python, fazemos isso usando o comando .append() (que significa “acrescentar“ ou “anexar”).
 
 Vamos atualizar o código:
 
-#Adicionando um novo produto no final da lista
-carrinho.append(“fone de ouvido”)
-print() #Pula linha
-print(“carrinho atualizado com o novo item:”)
+```python
+# Adicionando um novo produto no final da lista
+carrinho.append("fone de ouvido")
+print() # Pula linha
+print("carrinho atualizado com o novo item:")
 print(carrinho)
+```
 
+---
 
+COMO A FACULDADE COBRA ISSO?
 
-    Como a faculdade cobra isso?
-  Na faculdade de ADS, os professores vão te mostrar que as listas são o coração de sistemas que gerenciam dados, em uma prova ou trabalho, o desafio clássico será: “Crie um sistema onde o usuário digita o nome do produto e o sistema adiciona este produto na lista automaticamente”.
-
+Na faculdade de ADS, os professores vão te mostrar que as listas são o coração de sistemas que gerenciam dados. Em uma prova ou trabalho, o desafio clássico será: “Crie um sistema onde o usuário digita o nome do produto e o sistema adiciona este produto na lista automaticamente”.
 
 Vamos criar um carrinho de compras de um e-commerce:
 
-
-carrinho=[]
+```python
+carrinho = []
 continuar = True
 
 while continuar == True:
-   print('--- MENU DO CARRINHO ---')
-   print('1 - Adicionar Produto')
-   print('2 - Ver Carrinho')
-   print('3 - Fechar Pedido e Sair')
-   print()
+    print('--- MENU DO CARRINHO ---')
+    print('1 - Adicionar Produto')
+    print('2 - Ver Carrinho')
+    print('3 - Fechar Pedido e Sair')
+    print()
 	
-   opcao = input('Escolha um opção: ')
-   print()
+    opcao = input('Escolha um opção: ')
+    print()
 	
-   if opcao == '1':
-      novo_produto = input('Digite o nome do produto para o carrinho: “)
-      carrinho.append(novo_produto)
-      print('Produto adicionado com sucesso!')
-      print()
+    if opcao == '1':
+        novo_produto = input('Digite o nome do produto para o carrinho: ')
+        carrinho.append(novo_produto)
+        print('Produto adicionado com sucesso!')
+        print()
 		
-  elif opcao == '2':
-      print('seu carrinho atual tem estes itens:')
-      print(carrinho)
-      print()
-  elif opcao == '3':
-      print('Pedido fechado! Obrigado Por comprar conosco.')
-      continuar = False
+    elif opcao == '2':
+        print('seu carrinho atual tem estes itens:')
+        print(carrinho)
+        print()
+        
+    elif opcao == '3':
+        print('Pedido fechado! Obrigado Por comprar conosco.')
+        continuar = False
 		
-  else:
-      print('opção inválida!')
-      print()
-
+    else:
+        print('opção inválida!')
+        print()
+```
