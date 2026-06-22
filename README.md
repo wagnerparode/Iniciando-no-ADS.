@@ -366,3 +366,173 @@ print("--- SISTEMA DE CAIXA ---")
 calcular_preço_final(100.00, 10)  # Produto de R\$100 com 10% de desconto
 calcular_preço_final(250.00, 20)  # Produto de R\$250 com 20% de desconto
 ```
+
+# 📘 Anotações de Estudos: Lógica de Programação com Python
+
+Este repositório contém anotações práticas sobre conceitos intermediários de programação utilizando a linguagem Python, cobrindo funções com parâmetros, matrizes (listas bidimensionais) e manipulação de arquivos.
+
+---
+
+## 🚀 1. Avançando na Lógica: Passando Informações para Funções
+
+No cenário real de desenvolvimento, as funções não servem apenas para mostrar textos fixos. Elas recebem dados, processam essas informações, realizam cálculos e devolvem respostas.
+
+> **Exemplo Prático:** Imagine o sistema de uma loja. A função precisa receber o preço original do produto e o cupom de desconto para calcular o valor final. Essas informações enviadas para dentro da função são chamadas de **Parâmetros** (ou Argumentos).
+
+### 💻 Prática
+```python
+# 1. Ensinamos a função a calcular o desconto.
+# Ela espera receber o "valor" e o "cupom" dentro dos parênteses.
+def calcular_preco_final(valor, cupom):
+    desconto = valor * (cupom / 100)
+    preco_final = valor - desconto
+    print(f"O valor final com desconto é: R$ {preco_final:.2f}")
+
+# 2. O programa principal começa aqui (alinhado totalmente à esquerda):
+print("--- SISTEMA DE CAIXA ---")
+
+# Chamamos a função passando os valores diretamente para ela
+calcular_preco_final(100.00, 10)  # Produto de R$100 com 10% de desconto
+calcular_preco_final(250.00, 20)  # Produto de R$250 com 20% de desconto
+```
+
+---
+
+## 📊 2. Matrizes (Listas Bidimensionais)
+
+As **Matrizes** são estruturas de dados que na programação chamamos de **Listas de Duas Dimensões**. 
+
+* **Lista Comum:** Funciona como uma única fileira de gavetas.
+* **Matriz:** Funciona como uma tabela completa, contendo linhas e colunas (exatamente como uma planilha do Excel ou o tabuleiro de um jogo da velha).
+
+No Python, criamos uma matriz inserindo listas dentro de outra lista.
+
+### 💻 Prática
+```python
+# Criamos uma lista que contém outras duas listas dentro.
+# Cada linha representa um aluno: [Nota de Matemática, Nota de Português]
+notas = [
+    [8.5, 9.0],  # Aluno 0 (Linha 0)
+    [7.0, 6.5]   # Aluno 1 (Linha 1)
+]
+
+print("--- NOTAS DOS ALUNOS ---")
+
+# Para buscar um dado na matriz, usamos DOIS colchetes: [Linha][Coluna]
+print("Nota de Matemática do primeiro aluno:", notas[0][0])
+print("Nota de Português do primeiro aluno:", notas[0][1])
+print()
+print("Nota de Matemática do segundo aluno:", notas[1][0])
+```
+
+### 🔍 Entendendo a Busca por Coordenadas
+* `notas[0][0]`: Diz ao computador para ir na **Linha 0** (primeiro aluno) e acessar a **Coluna 0** (Matemática).  
+  * **Resultado:** `8.5`
+* `notas[1][0]`: Diz ao computador para ir na **Linha 1** (segundo aluno) e acessar a **Coluna 0** (Matemática).  
+  * **Resultado:** `7.0`
+
+---
+
+## 💾 3. Manipulação de Arquivos
+
+Até agora, toda vez que o aplicativo (como o Pydroid3) era fechado ou o programa terminava, todas as informações salvas em variáveis, listas ou matrizes sumiam da memória do aparelho.
+
+A **Manipulação de Arquivos** serve para salvar dados de forma permanente em arquivos de texto (como arquivos `.txt`). Isso faz com que as informações fiquem gravadas no armazenamento do dispositivo, mesmo se o aplicativo for fechado ou o celular for desligado.
+
+### 💻 Prática (.txt)
+No Python, usamos o comando `open()` para abrir ou criar um arquivo, e o argumento `"w"` (*write*, que significa escrever) para preparar o arquivo para receber textos.
+
+```python
+# O comando open cria o arquivo "dados.txt" e o modo "w" prepara para escrever nele
+arquivo = open("dados.txt", "w")
+
+# Escrevemos linhas de texto dentro do arquivo (\n pula para a próxima linha)
+arquivo.write("Dados Salvos do Sistema de ADS\n")
+arquivo.write("Usuário: admin\n")
+arquivo.write("Status: Ativo\n")
+
+# ⚠️ REGRA DE OURO: Sempre precisamos fechar o arquivo para salvar as alterações na memória
+arquivo.close()
+
+print("Arquivo 'dados.txt' criado e salvo com sucesso!")
+```
+
+---
+
+## 🏆 4. Projeto Consolidado (Código Completo)
+
+Abaixo está um sistema bancário simulado que une **todos os conceitos aprendidos**: funções, loops, condicionais, matrizes, listas e persistência de arquivos.
+
+```python
+def mostrar_linha():
+    print("------------")
+
+# Matriz contendo: [Número da Conta, Agência, Saldo]
+dados_banco = [
+    [1001, 55432, 1500.50],
+    [99, 2, 500.0]
+]
+
+senha_correta = "ads123"
+usuario_logado = False
+tentativas = 0
+
+# Loop de autenticação (Máximo 3 tentativas)
+while usuario_logado == False and tentativas < 3:
+    mostrar_linha()
+    print("--- PORTAL BANCARIO ADS ---")
+    senha_digitada = input("Digite a senha de 6 digitos: ")
+    
+    if senha_digitada == senha_correta:
+        print("Acesso Permitido!")
+        usuario_logado = True
+    else:
+        tentativas = tentativas + 1
+        print(f"Senha Incorreta! Tentativas: {tentativas}/3")
+        print()
+        
+if usuario_logado == False:
+    mostrar_linha()
+    print("CONTA BLOQUEADA POR SEGURANÇA!")
+else:
+    # Histórico inicial de transações (Lista comum)
+    historico_pix = ["Pix enviado: R\$50.00", "Pix recebido: R\$120.00"]
+    menu_aberto = True
+    
+    while menu_aberto == True:
+        mostrar_linha()
+        print("1 - Ver Saldo (Usa Matriz)")
+        print("2 - Enviar Novo Pix (Usa Lista e Conversão)")
+        print("3 - Salvar Extrato e Sair (Usa Arquivos)")
+        print()
+        
+        opcao = input("Escolha uma opcao: ")
+        print()
+        
+        if opcao == "1":
+            saldo_atual = dados_banco[0][2]
+            print("Seu saldo atual é: R\$", saldo_atual)
+            
+        elif opcao == "2":
+            valor_pix = float(input("Digite o valor do pix: R\$ "))
+            texto_transacao = "Pix enviado: R\$ " + str(valor_pix)
+            historico_pix.append(texto_transacao)
+            print("Pix enviado com sucesso!")
+            
+        elif opcao == "3":
+            print("Gravando seu extrato no celular...")
+            arquivo = open("extrato_bancario.txt", "w")
+            arquivo.write("=== EXTRATO DA CONTA ===\n")
+            arquivo.write("Conta: " + str(dados_banco[0][1]) + "\n")
+            arquivo.write("Historico de lancamentos:\n")
+            
+            for item in historico_pix:
+                arquivo.write(item + "\n")
+            arquivo.close()
+            
+            print("Arquivo 'extrato_bancario.txt' criado com sucesso!")
+            print("Saindo do sistema. Até logo!")
+            menu_aberto = False
+        else:
+            print("Opção inválida! Tente novamente.")
+```
